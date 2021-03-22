@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "C:\\Users\\santhosh kumar\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "cSpell.words": [
+        "mqtt",
+        "paho"
+    ],
+    "python.formatting.provider": "black"
+}

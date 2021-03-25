@@ -15,8 +15,6 @@ Topic - It's something like the FM frequency where you can subscribe to a topic 
 
 * [Linkedin](https://www.linkedin.com/in/santhosh-kumar-dhanasekaran-85a89b131/)
 
-* [Youtube](https://www.youtube.com/channel/UCyJBMhkN3MlHHWWZrDDtXPQ)
-
 * [Twitter](https://twitter.com/santhos12551)
 
 * [Instagram](https://www.instagram.com/santhoshgoku/?hl=en)

@@ -11,10 +11,12 @@ Topic - It's something like the FM frequency where you can subscribe to a topic 
 
 
 
-Connect with me on -
+# Connect with me -🎯🎯
 
-Linkedin
+* [Linkedin](https://www.linkedin.com/in/santhosh-kumar-dhanasekaran-85a89b131/)
 
-Instagram 
+* [Youtube](https://www.youtube.com/channel/UCyJBMhkN3MlHHWWZrDDtXPQ)
 
-Twitter
+* [Twitter](https://twitter.com/santhos12551)
+
+* [Instagram](https://www.instagram.com/santhoshgoku/?hl=en)

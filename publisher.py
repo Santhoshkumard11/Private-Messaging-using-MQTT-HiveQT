@@ -34,7 +34,7 @@ counter = 100
 #send 100 messages with 2 seconds interval
 while counter > 0:
     # sending 100 message in 2 sec interval
-    client.publish("my/gf-1/name", f"Hello Hello!!! gorgeous {counter}")
+    client.publish("my/gf-1/{your_friends_name}", f"Hello Hello!!! gorgeous {counter}")
     sleep(2)
     client.publish("my/family/{family_member_name}", f"Hey Mom {counter}")
     sleep(2)

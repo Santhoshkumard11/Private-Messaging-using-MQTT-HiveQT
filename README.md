@@ -1,4 +1,4 @@
-# Private-Messaging-using-MQTT-HiveQT
+# Hacktoberfest 2021 - Private Messaging using HiveQT 
 Send messages to your loved once using this simple Private Messaging technique.
 
 
@@ -8,12 +8,12 @@ A month-long celebration from October 1st - 31st sponsored by Digital Ocean and 
 https://hacktoberfest.digitalocean.com/
 
 ### How to contribute to this project
-- Choose a issue you want to work on or any improvement to the existing code base
-- Create a PR once you are done with the work
-- Wait for the approval
-- Once the PR is merged add your name to the CONTRIBUTORS.md file
+1. Choose a issue you want to work on or any improvement to the existing code base
+2. Create a PR once you are done with the work
+3. Wait for the approval
+4. Once the PR is merged add your name to the `CONTRIBUTORS.md` file
 
-#### Add your details to CONTRIBUTORS.md file using the below markdown syntax
+#### Add your details to `CONTRIBUTORS.md` file using the below markdown syntax
 
 ```
 #### Name: [YOUR NAME](GitHub link)
@@ -29,11 +29,9 @@ https://hacktoberfest.digitalocean.com/
 
 3. Create a MQTT Credential for each user (both for subscriber and publisher)
 
-4. Get started with the code [here](https://console.hivemq.cloud/clients/python-paho)
-## How messaging words with MQTT and HiveQT
-## Python has it all
+4. Get started with the code in the repo
 
-## How it works
+## How messaging words with MQTT and HiveQT
 
 We have a publisher who sends the message to the particular topic and subscriber is the one who receives the message.
 

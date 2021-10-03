@@ -23,7 +23,7 @@ client.on_disconnect = on_disconnect
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 
 # set username and password
-client.username_pw_set("{your_username}", "{your_password}")
+client.username_pw_set(f'{config["username"]}', f'{config["password"]}')
 
 # connect to HiveMQ Cloud on port 8883
 client.connect("{your_uri}", 8883)

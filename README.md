@@ -31,6 +31,9 @@ https://hacktoberfest.digitalocean.com/
 
 4. Get started with the code [here](https://console.hivemq.cloud/clients/python-paho)
 ## How messaging words with MQTT and HiveQT
+## Python has it all
+
+## How it works
 
 We have a publisher who sends the message to the particular topic and subscriber is the one who receives the message.
 
@@ -44,3 +47,14 @@ Topic - It's something like the FM frequency where you can turn in to a particul
 - [Introducing the MQTT Protocol - MQTT Essentials: Part 1](https://www.hivemq.com/blog/mqtt-essentials-part-1-introducing-mqtt/)
 - [Publish & Subscribe - MQTT Essentials: Part 2](https://www.hivemq.com/blog/mqtt-essentials-part2-publish-subscribe/)
 - [MQTT Client and Broker and MQTT Server and Connection Establishment Explained - MQTT Essentials: Part 3](https://www.hivemq.com/blog/mqtt-essentials-part-3-client-broker-connection-establishment/)
+Topic - It's something like the FM frequency where you can subscribe to a topic and listen to all the message sent to that particular topic.
+
+
+
+# Connect with me -🎯🎯
+
+* [Santhosh's Linkedin](https://www.linkedin.com/in/santhosh-kumard/)
+
+* [Santhosh's Twitter](https://twitter.com/santhos12551)
+
+* [Santhosh's Instagram](https://www.instagram.com/santhoshgoku)

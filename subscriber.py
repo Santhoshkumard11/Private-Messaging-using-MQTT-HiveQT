@@ -1,5 +1,7 @@
 import paho.mqtt.client as mqtt
 from datetime import datetime
+
+# get the time to pretty print the time
 def get_now_datetime():
     return datetime.now().strftime("%a %I:%M %p")
 

@@ -3,33 +3,37 @@ from datetime import datetime
 from dotenv import dotenv_values
 config = dotenv_values(".env")  # load environment variables
 
-# get the time to pretty print the time
-def get_now_datetime():
-    return datetime.now().strftime("%a %I:%M %p")
 
-# The callback for when the client receives a CONNACK response from the server.
-def on_connect(client, userdata, flags, rc):
-    if rc == 0:
-        print("Connected successfully")
-    else:
-        print("Connect returned result code: " + str(rc))
+class Subscriber:
+    def __init__(self) -> None:
+        pass
 
-# The callback for when a PUBLISH message is received from the server.
-def on_message(client, userdata, msg):
-    username = userdata["username"]
-    datenow = get_now_datetime()
-    print(f"{username}:  " + msg.payload.decode("utf-8") +f"\n{datenow}\n")
+    def get_now_datetime(self):
+        """Get the time to pretty print the time"""
+        return datetime.now().strftime("%a %I:%M %p")
+    
+    def on_connect(self, client, userdata, flags, rc):
+        """The callback for when the client receives a CONNACK response from the server."""
+        print(("Connected successfully") if not rc else 
+            ("Connect returned result code: " + str(rc)))
+    
+    def on_message(self, client, userdata, msg):
+        """The callback for when a PUBLISH message is received from the server."""
+        username = userdata["username"]
+        datenow = self.get_now_datetime()
+        print(f"{username}:  " + msg.payload.decode("utf-8") +f"\n{datenow}\n")
 
-# The callback for when we disconnect with the server.
-def on_disconnect(client, userdata, rc):
-    if rc != 0:
-        print("Unexpected disconnection.")
-        
-# create the client
-client = mqtt.Client()
-client.on_connect = on_connect
-client.on_message = on_message
-client.on_disconnect = on_disconnect
+    def on_disconnect(client, userdata, rc):
+        """The callback for when we disconnect with the server."""
+        if rc:
+            print("Unexpected disconnection.")
+
+# Create the client and Subscriber
+client, subscriber = mqtt.Client(), Subscriber()
+client.on_connect = subscriber.on_connect
+client.on_message = subscriber.on_message
+client.on_disconnect = subscriber.on_disconnect
+
 
 # enable TLS
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)

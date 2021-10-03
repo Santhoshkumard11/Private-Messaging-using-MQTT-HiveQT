@@ -1,5 +1,8 @@
 import paho.mqtt.client as mqtt
 from datetime import datetime
+from dotenv import dotenv_values
+config = dotenv_values(".env")  # load environment variables
+
 
 class Subscriber:
     def __init__(self) -> None:
@@ -31,13 +34,14 @@ client.on_connect = subscriber.on_connect
 client.on_message = subscriber.on_message
 client.on_disconnect = subscriber.on_disconnect
 
+
 # enable TLS
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 
 # set username and password
-client.username_pw_set("{your_username}", "{your_password}")
+client.username_pw_set(f'{config["username"]}', f'{config["password"]}')
 # send your username to keep track of who sends the message
-client.user_data_set({"username":"Santhosh"})
+client.user_data_set({"username":config["username"]})
 
 # connect to HiveMQ Cloud on port 8883
 client.connect("{your_uri}", 8883)

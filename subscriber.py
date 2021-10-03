@@ -1,5 +1,7 @@
 import paho.mqtt.client as mqtt
 from datetime import datetime
+from dotenv import dotenv_values
+config = dotenv_values(".env")  # load environment variables
 
 # get the time to pretty print the time
 def get_now_datetime():
@@ -22,7 +24,7 @@ def on_message(client, userdata, msg):
 def on_disconnect(client, userdata, rc):
     if rc != 0:
         print("Unexpected disconnection.")
-
+        
 # create the client
 client = mqtt.Client()
 client.on_connect = on_connect
@@ -33,9 +35,9 @@ client.on_disconnect = on_disconnect
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 
 # set username and password
-client.username_pw_set("{your_username}", "{your_password}")
+client.username_pw_set(f'{config["username"]}', f'{config["password"]}')
 # send your username to keep track of who sends the message
-client.user_data_set({"username":"Santhosh"})
+client.user_data_set({"username":config["username"]})
 
 # connect to HiveMQ Cloud on port 8883
 client.connect("{your_uri}", 8883)

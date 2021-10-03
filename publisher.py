@@ -1,5 +1,7 @@
 import paho.mqtt.client as mqtt
 from time import sleep
+import sys
+
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
@@ -28,11 +30,12 @@ client.connect("{your_uri}", 8883)
 
 # publish your message
 counter = 100
+
 #send 100 messages with 2 seconds interval
 while counter > 0:
-
+    # sending 100 message in 2 sec interval
     client.publish("my/gf-1/name", f"Hello Hello!!! gorgeous {counter}")
     sleep(2)
-    client.publish("my/gf-2/name", f"Hey Darls {counter}")
+    client.publish("my/family/{family_member_name}", f"Hey Mom {counter}")
     sleep(2)
     counter -= 1

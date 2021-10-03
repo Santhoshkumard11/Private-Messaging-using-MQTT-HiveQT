@@ -12,13 +12,7 @@ def on_connect(client, userdata, flags, rc):
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    username = "unknown"
-    # catch if the username is not set
-    try:
-        username = userdata["username"]
-    except KeyError:
-        pass
-    
+    username = userdata["username"]
     datenow = get_now_datetime()
     print(f"{username}:  " + msg.payload.decode("utf-8") +f"\n{datenow}\n")
 
@@ -45,8 +39,8 @@ client.user_data_set({"username":"Santhosh"})
 client.connect("{your_uri}", 8883)
 
 # subscribe to the a topic
-client.subscribe("my/gf-1/{name}")
-client.subscribe("my/gf-2/{name}")
+client.subscribe("my/gf-1/{someones_name}")
+client.subscribe("my/family/{someones_name}")
 
 # send some text to test the application
 # client.publish("my/text/message", "Hello")

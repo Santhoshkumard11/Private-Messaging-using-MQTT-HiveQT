@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 from datetime import datetime
 from dotenv import dotenv_values
-config = dotenv_values(".env")
+config = dotenv_values(".env")  # load environment variables
 
 # get the time to pretty print the time
 def get_now_datetime():

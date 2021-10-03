@@ -1,6 +1,8 @@
 import paho.mqtt.client as mqtt
 from time import sleep
 import sys
+from dotenv import dotenv_values
+config = dotenv_values(".env")
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):

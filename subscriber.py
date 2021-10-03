@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 from datetime import datetime
 from dotenv import dotenv_values
+config = dotenv_values(".env")
 
 # get the time to pretty print the time
 def get_now_datetime():
@@ -23,9 +24,6 @@ def on_message(client, userdata, msg):
 def on_disconnect(client, userdata, rc):
     if rc != 0:
         print("Unexpected disconnection.")
-
-# load the .env values
-config = dotenv_values(".env")
         
 # create the client
 client = mqtt.Client()

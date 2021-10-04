@@ -44,7 +44,10 @@ client.username_pw_set(f'{config["username"]}', f'{config["password"]}')
 client.user_data_set({"username":config["username"]})
 
 # connect to HiveMQ Cloud on port 8883
-client.connect("{your_uri}", 8883)
+try:
+    client.connect("{your_uri}", 8883)
+except:
+    print("Please Make sure your are connected to the Internet.")
 
 # subscribe to the a topic
 client.subscribe("my/gf-1/{someones_name}")

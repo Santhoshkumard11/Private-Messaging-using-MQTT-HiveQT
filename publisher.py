@@ -33,7 +33,10 @@ client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 client.username_pw_set(f'{config["username"]}', f'{config["password"]}')
 
 # connect to HiveMQ Cloud on port 8883
-client.connect("{your_uri}", 8883)
+try:
+    client.connect("{your_uri}", 8883)
+except:
+    print("Please Make sure your are connected to the Internet.")
 
 # publish your message
 counter = 100

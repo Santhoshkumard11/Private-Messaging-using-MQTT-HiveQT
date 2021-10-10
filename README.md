@@ -1,26 +1,10 @@
-# Hacktoberfest 2021 - Private Messaging using HiveQT 
+# Private Messaging using HiveQT 
 Send messages to your loved once using this simple Private Messaging technique.
-
-
-### What is Hacktoberfest 2021?
-A month-long celebration from October 1st - 31st sponsored by Digital Ocean and GitHub to get people involved in Open Source. Create your very first pull request to any public repository on GitHub and contribute to the open source developer community.
-
-https://hacktoberfest.digitalocean.com/
 
 ### How to contribute to this project
 1. Choose a issue you want to work on or any improvement to the existing code base
 2. Create a PR once you are done with the work
 3. Wait for the approval
-4. Once the PR is merged add your name to the `CONTRIBUTORS.md` file
-
-#### Add your details to `CONTRIBUTORS.md` file using the below markdown syntax
-
-```
-#### Name: [YOUR NAME](GitHub link)
-- Place: City, State, Country
-- Bio: Interesting fact about you in one line
-- GitHub: [GitHub account name](GitHub link)
-```
 
 #### Setting up a free account with HiveMQ
 1. [SignUp here](https://console.hivemq.cloud)

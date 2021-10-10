@@ -4,22 +4,27 @@ import sys
 from dotenv import dotenv_values
 config = dotenv_values(".env")      # load environment variables
 
-# The callback for when the client receives a CONNACK response from the server.
-def on_connect(client, userdata, flags, rc):
-    if rc == 0:
-        print("Connected successfully")
-    else:
-        print("Connect returned result code: " + str(rc))
+class Publisher:
+    def __init__(self) -> None:
+        pass
+    
+    # The callback for when the client receives a CONNACK response from the server.
+    def on_connect(self, client, userdata, flags, rc):
+        if rc == 0:
+            print("Connected successfully")
+        else:
+            print("Connect returned result code: " + str(rc))
 
-# The callback for when we disconnect with the server.
-def on_disconnect(client, userdata, rc):
-    if rc != 0:
-        print("Unexpected disconnection.")
+    # The callback for when we disconnect with the server.
+    def on_disconnect(self, client, userdata, rc):
+        if rc != 0:
+            print("Unexpected disconnection.")
         
 # create the client
 client = mqtt.Client()
-client.on_connect = on_connect
-client.on_disconnect = on_disconnect
+publisher = Publisher()
+client.on_connect = publisher.on_connect
+client.on_disconnect = publisher.on_disconnect
 
 # enable TLS
 client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
@@ -28,7 +33,10 @@ client.tls_set(tls_version=mqtt.ssl.PROTOCOL_TLS)
 client.username_pw_set(f'{config["username"]}', f'{config["password"]}')
 
 # connect to HiveMQ Cloud on port 8883
-client.connect("{your_uri}", 8883)
+try:
+    client.connect("{your_uri}", 8883)
+except:
+    print("Please Make sure your are connected to the Internet.")
 
 # publish your message
 counter = 100
